@@ -3,7 +3,7 @@ import time
 import shutil
 import unittest
 from pathlib import Path
-from AmtrakTrainRoutesApp.GtfsParser import GtfsParser
+from GtfsParser import AmtrakGtfsParser
 
 
 class TestGtfsDownload(unittest.TestCase):
@@ -11,7 +11,7 @@ class TestGtfsDownload(unittest.TestCase):
         """Set up a clean sandbox directory structure for test separation."""
         self.test_dir = Path(__file__).resolve().parent / "test_sandbox"
         self.test_dir.mkdir(parents=True, exist_ok=True)
-        self.parser = GtfsParser(base_dir=self.test_dir)
+        self.parser = AmtrakGtfsParser(base_dir=self.test_dir)
 
     def tearDown(self):
         """Clean up the test sandbox directory after test execution."""
